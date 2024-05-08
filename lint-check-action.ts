@@ -2,8 +2,8 @@ import * as fs from 'fs';
 
 async function run() {
   try {
-    // Verifica se o arquivo necessário para o build está presente
-    const filePath = 'caminho/do/arquivo/necessario.txt';
+    
+    const filePath = 'package.json';
     if (!fs.existsSync(filePath)) {
       console.error('Arquivo necessário não encontrado. Abortando a pipeline.');
       process.exit(1);
