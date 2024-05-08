@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/testebasico.js",
     "build": "mkdir -p dist && cp index.html style.css script.js dist/",
-    "lint": "eslint ."
+    "lint": ".eslintrc.js"
   },
   "dependencies": {},
   "devDependencies": {
