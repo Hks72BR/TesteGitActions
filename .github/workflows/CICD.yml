@@ -50,7 +50,11 @@ jobs:
       - name: Deploy to environment
         uses: actions/github-script@v4
         with:
+          main
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+          token: ${{ secrets.TOKEN }}
+ 
           script: |
             const { data: deployments } = await github.repos.createDeployment({
               owner: context.repo.owner,
