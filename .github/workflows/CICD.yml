@@ -20,10 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
-      - name: Install Mocha
-        run: npm install --save-dev mocha  
 
+      - name: Install Mocha
+        run: npm install --save-dev mocha
 
       - name: Run unit tests
         run: npm test
@@ -31,16 +30,23 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Create release artifact
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  lint-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          tag_name: v1
-          release_name: Release v1
-          body: Release v1
-          draft: false
-          prerelease: false
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint
 
   deploy:
     runs-on: ubuntu-latest
@@ -66,6 +72,15 @@ jobs:
               deployment_id: deployments.id,
               state: 'success'
             });
+
+      - name: Update release
+        uses: actions/update-release@v1
+        with:
+          tag_name: v1
+          release_name: Release v1
+          body: Release v1
+          draft: false
+          prerelease: false
 
       - name: Notify on failure
         if: failure()
