@@ -29,6 +29,10 @@ jobs:
 
       - name: Build application
         run: npm run build
+      
+      - name: Lint code
+        run: npm install eslint --save-dev
+
 
   lint-check:
     runs-on: ubuntu-latest
