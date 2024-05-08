@@ -5,7 +5,8 @@
   "author": "Higor-Coelho-do-Nascimento",
   "scripts": {
     "test": "mocha test/testebasico.js",
-    "build": "mkdir -p dist && cp index.html style.css script.js dist/"
+    "build": "mkdir -p dist && cp index.html style.css script.js dist/",
+    "lint": "eslint ."
   },
   "dependencies": {},
   "devDependencies": {
