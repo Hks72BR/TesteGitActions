@@ -20,6 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      
+      - name: Install Mocha
+        run: npm install --save-dev mocha  
+
 
       - name: Run unit tests
         run: npm test
