@@ -34,7 +34,7 @@ jobs:
       - name: Create release artifact
         uses: actions/create-release@v1
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           tag_name: v1
           release_name: Release v1
@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to environment
         uses: actions/github-script@v4
         with:
-          github-token: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           script: |
             const { data: deployments } = await github.repos.createDeployment({
               owner: context.repo.owner,
