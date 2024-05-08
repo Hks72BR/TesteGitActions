@@ -1,10 +1,11 @@
 {
     "name": "teste-para-santander",
     "version": "1.0.0",
-    "description": "Estou-dando-meu-melhor ",
-    "author": " Higor-Coelho-do-Nascimento ",
+    "description": "Estou-dando-meu-melhor",
+    "author": "Higor-Coelho-do-Nascimento",
     "scripts": {
-        "test": "mocha test/testebasico.js"
+      "test": "mocha test/testbasico.js",
+      "build": "mkdir -p dist && cp index.html style.css script.js dist/"
     },
     "dependencies": {},
     "devDependencies": {
