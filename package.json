@@ -5,15 +5,10 @@
   "author": "Higor-Coelho-do-Nascimento",
   "scripts": {
     "test": "mocha test/testebasico.js",
-    "build": "mkdir -p dist && cp index.html style.css script.js dist/",
-    "lint": "eslint .", 
-    "start": "tsc && node dist/index.js" 
+    "build": "mkdir -p dist && cp index.html style.css script.js dist/"
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^9.1.3",
-    "eslint": "^8.0.0", 
-    "@types/node": "^16.11.7", 
-    "typescript": "^4.5.4" 
+    "mocha": "^9.1.3" 
   }
 }
